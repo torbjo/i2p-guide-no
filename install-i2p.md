@@ -1,6 +1,8 @@
 Hvordan installere I2P
 ======================
 
+_Sist oppdatert: @@LAST-UPDATE@@_
+
 
 ## Hva er I2P ##
 

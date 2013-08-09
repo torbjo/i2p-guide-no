@@ -1,0 +1,6 @@
+
+*~
+*.swp
+
+# Ignore auto-generated files
+install-i2p.html
