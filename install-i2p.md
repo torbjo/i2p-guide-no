@@ -1,3 +1,16 @@
+<style>
+  img[title=maskot] {
+    float: right;
+    width: 250px;
+  }
+</style>
+
+</style>
+
+![I2P sin maskot](i2p-mascot.svgz "maskot")
+![I2P sin logo](i2p-logo.svgz "logo")
+
+
 Hvordan installere I2P
 ======================
 
@@ -7,7 +20,8 @@ _Sist oppdatert: @@LAST-UPDATE@@_
 ## Hva er I2P ##
 
 I2P står for «The Invisible Internet Project» og er et alternativ til
-det mer kjente anonymiserings-verktøyet [TOR](https://torproject.org/).
+det mer kjente verktøyet for anonymisering som kalles
+[TOR](https://torproject.org/).
 
 > I2P is an anonymous network that can be used to access certain secure
 > pages and services. I'm not going to fully explain how that works, you
@@ -20,18 +34,15 @@ det mer kjente anonymiserings-verktøyet [TOR](https://torproject.org/).
 > with I2P.
 
 
+
 ## Lenker ##
 
-[I2P sin hjemmeside](https://geti2p.net/).
+* [I2P sin hjemmeside](https://geti2p.net/).
+* [I2P sin FAQ](https://geti2p.net/en/faq)
+* [Debian-/Ubuntu-pakken](https://geti2p.net/en/download/debian)
+* [Mer hjelp](https://help.ubuntu.com/community/I2P)
+* [Wikipedia](http://en.wikipedia.org/wiki/I2P)
 
-Her finner du mer hjelp: <https://help.ubuntu.com/community/I2P>.
-
-Eller vær lat og bruk Debian-/Ubuntu-pakken:
-<https://geti2p.net/en/download/debian>.
-
-<!--
-[Her finner du mere hjelp](https://help.ubuntu.com/community/I2P)
--->
 
 
 ## Installere på Debian GNU/Linux eller Ubuntu® ##
@@ -45,7 +56,7 @@ I2P»._
 ### Installer Java ###
 
 I2P er skrevet i Java så du må først sørge for at det er installert; noe
-det høyst sansynelig er. En måte å sjekke er å kjøre følgende kommando:
+det høyst sannsynlig er. En måte å sjekke er å kjøre følgende kommando:
 
     $ java -version
     java version "1.6.0_27"
@@ -56,12 +67,12 @@ Hvis du insteden ser `java: command not found` må du installere:
 
     $ apt-get install default-jre-headless
 
-Du kan også eksplisit velge hvilken java-versjon du vil bruke:
+Du kan også eksplisitt velge hvilken java-versjon du vil bruke:
 
     $ apt-get install openjdk-6-jre-headless
     $ apt-get install openjdk-7-jre-headless
 
-Oracle® sin Java-versjon er *ikke* annbefalt!
+Oracle® sin Java-versjon er *ikke* anbefalt!
 
 
 ### Last ned (download) ###
@@ -105,7 +116,7 @@ Når installasjonen er ferdig, skriv `exit` eller trykk `CTRL-d` for
     Waiting for I2P Service......
     running: PID:8533
 
-Hvis alt er i orden skal du se meldingen over (PID vil variare).
+Hvis alt er i orden skal du se meldingen over (PID vil variere).
 
 Har du installert I2P på samme maskinen som du sitter på, er det bare å
 åpne nettleseren og gå til adressen `http://localhost:7657`. Du finner
@@ -129,37 +140,37 @@ TODO: init.d skript som starter I2P ved boot. (See: i2prouter script)
 
 ### Diverse ###
 
-For bedre sikkerhet kan du gjøre dette:
+For å forbedre sikkerheten kan du gjøre dette:
 
     $ chown -R 0.0     /home/i2p
     $ chown -R i2p.i2p /home/i2p/.i2p
 
-Slik at I2P programmet ikke har rettigheter til å endre sine egne
-programfiler. Ulempen er da at den automatiske oppgraderingsfunksjonen
-ikke virker lenger.
+… slik at I2P programmet ikke har rettigheter til å endre sine egne
+programfiler. Ulempen med dette er funksjonen for automatisk oppgradering
+ikke vil virke lenger.
 
-**Viktig:** Konfig-filene i `/home/i2p` er ikke i bruk! De du skal redigere
-ligger i `/home/i2p/.i2p`.
+**Viktig:** Konfigurasjons-filene i `/home/i2p` er ikke i bruk! De du
+skal redigere ligger i `/home/i2p/.i2p`.
 
 
 
 ## Konfigurere I2P ##
 
 For å konfigurere I2P-ruteren brukes det innebygde webgrensesnittet,
-også kalt «router console». Du når det ved å bruke adressen
-<http://localhost:7657/>
+også kalt «router console». Det når du ved å peke nettleseren din på
+adressen <http://localhost:7657/>.
 
 ### Bruke I2P-konsollet fra en annen maskin ###
 
-Hvis du har installert I2P på en annen maskin enn den du sitter forran
+Hvis du har installert I2P på en annen maskin enn den du sitter foran
 nå (localhost), må du ...
 
-Av sikkerthetsmessige årsaker lytter ikke I2P-ruteren på IP-adressen til
+Av sikkerhetsmessige årsaker lytter ikke I2P-ruteren på IP-adressen til
 maskinen den er installert på. Så hvis du har installert I2P på maskin
 A med IP 10.1.1.1, mens du nå sitter på maskin B med IP 10.1.1.123, må
 du be I2P lytte på 10.1.1.1 slik at du når den fra maskin B.
 
-Det gjør du ved å åpne konfigurasjonsfilen `/home/i2p/.i2p/clients.config`.
+Det gjør du ved å åpne konfigurasjonfilen `/home/i2p/.i2p/clients.config`.
 (Husk å stoppe I2P først!). Der finner du en linje à la dette:
 
     clientApp.0.args=7657 ::1,127.0.0.1 ./webapps/
@@ -200,7 +211,7 @@ $ firefox -P I2P -new-instance
 <!--
 ## Redigere konfigurasjonsfiler ##
 
-*Merk:* Dette er for vidrekommende. Jeg anbefaler å bruke det grafiske
+*Merk:* Dette er for viderekommende Jeg anbefaler å bruke det grafiske
 konsolet for å gjøre endringer.
 
 Husk å stoppe I2P ruteren før du endrer disse filene!
