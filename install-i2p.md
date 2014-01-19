@@ -1,3 +1,12 @@
+<!--
+Did not get images to work on GitHub :(
+
+Stupid GitHub returns wrong mime-type for SVG images:
+$ HEAD https://raw.github.com/torbjo/i2p-guide-no/master/i2p-mascot.svg | grep ^Content-Type
+Content-Type: text/plain; charset=utf-8
+-->
+
+<!--
 <style>
   img[title=maskot] {
     float: right;
@@ -9,6 +18,7 @@
 
 ![I2P sin maskot](i2p-mascot.svg "maskot")
 ![I2P sin logo](i2p-logo.svg "logo")
+-->
 
 
 Hvordan installere I2P
