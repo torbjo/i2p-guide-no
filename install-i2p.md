@@ -7,8 +7,8 @@
 
 </style>
 
-![I2P sin maskot](i2p-mascot.svgz "maskot")
-![I2P sin logo](i2p-logo.svgz "logo")
+![I2P sin maskot](i2p-mascot.svg "maskot")
+![I2P sin logo](i2p-logo.svg "logo")
 
 
 Hvordan installere I2P
@@ -162,8 +162,10 @@ adressen <http://localhost:7657/>.
 
 ### Bruke I2P-konsollet fra en annen maskin ###
 
+<!--
 Hvis du har installert I2P på en annen maskin enn den du sitter foran
 nå (localhost), må du ...
+-->
 
 Av sikkerhetsmessige årsaker lytter ikke I2P-ruteren på IP-adressen til
 maskinen den er installert på. Så hvis du har installert I2P på maskin
