@@ -6,6 +6,9 @@ _Sist oppdatert: @@LAST-UPDATE@@_
 
 ## Hva er I2P ##
 
+I2P står for «The Invisible Internet Project» og er et alternativ til
+det mer kjente anonymiserings-verktøyet [TOR](https://torproject.org/).
+
 > I2P is an anonymous network that can be used to access certain secure
 > pages and services. I'm not going to fully explain how that works, you
 > can check the links below. It is not an Onion Router style network
@@ -19,32 +22,58 @@ _Sist oppdatert: @@LAST-UPDATE@@_
 
 ## Lenker ##
 
-Her finner du mer hjelp: <https://help.ubuntu.com/community/I2P>
+[I2P sin hjemmeside](https://geti2p.net/).
+
+Her finner du mer hjelp: <https://help.ubuntu.com/community/I2P>.
 
 Eller vær lat og bruk Debian-/Ubuntu-pakken:
-<http://www.i2p2.de/debian.html>
+<https://geti2p.net/en/download/debian>.
 
 <!--
 [Her finner du mere hjelp](https://help.ubuntu.com/community/I2P)
 -->
 
 
-## Installere I2P ##
+## Installere på Debian GNU/Linux eller Ubuntu® ##
 
-### Last ned ###
+_Merk: Hvis du bruker
+[Debian-/Ubuntu-pakken](https://geti2p.net/en/download/debian) er alt
+i denne seksjon gjort for deg så du kan hoppe rett til «Konfigurere
+I2P»._
 
-Installér Java, hvis nødvendig. (Du kan sjekke om Java er installert ved
-å kjøre `java -version` fra kommandolinjen.)
 
-    $ apt-get install openjdk-6-jre
+### Installer Java ###
 
-Last ned I2P:
+I2P er skrevet i Java så du må først sørge for at det er installert; noe
+det høyst sansynelig er. En måte å sjekke er å kjøre følgende kommando:
 
-    $ wget http://mirror.i2p2.de/i2pinstall_0.9.7.jar
+    $ java -version
+    java version "1.6.0_27"
+    OpenJDK Runtime Environment (IcedTea6 1.12.6) (6b27-1.12.6-1~deb6u1)
+    OpenJDK Client VM (build 20.0-b12, mixed mode, sharing)
 
-Verifiser integriteten til det du har lastet ned:
+Hvis du insteden ser `java: command not found` må du installere:
 
-    $ echo "c0a67051bb0c6f1e4ce3ac8a04257063c4b606b76309b39a6c3daeaaa3888e04 i2pinstall_0.9.7.jar" | sha256sum --check
+    $ apt-get install default-jre-headless
+
+Du kan også eksplisit velge hvilken java-versjon du vil bruke:
+
+    $ apt-get install openjdk-6-jre-headless
+    $ apt-get install openjdk-7-jre-headless
+
+Oracle® sin Java-versjon er *ikke* annbefalt!
+
+
+### Last ned (download) ###
+
+Besøk [nedlastningsisden](https://geti2p.net/en/download) til I2P eller
+bruk kommandolinja:
+
+    $ wget https://i2p.googlecode.com/files/i2pinstall_0.9.9.jar
+
+Verifiser integriteten til installasjons-fila:
+
+    $ echo "5028910d3fb9747a6724e39f8eccb6d9ebe0530ef017102c372871badfbf6d9f i2pinstall_0.9.9.jar" | sha256sum --check
 
 
 ### Installér ###
@@ -57,7 +86,7 @@ Sett opp en egen bruker for I2P-tjenesten:
 Tekstbasert installasjon:
 
     $ su i2p
-    $ java -jar i2pinstall_0.9.7.jar -console
+    $ java -jar i2pinstall_0.9.9.jar -console
 
 Når du blir spurt om å «Select target path», skriver du `/home/i2p`, for
 å installere I2P i den katalogen.

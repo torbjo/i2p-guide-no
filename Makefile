@@ -2,7 +2,8 @@ MARKDOWN=markdown_py
 #MARKDOWN=markdown_py -o html5
 
 all: install-i2p.html
-	xdg-open $^
+	firefox $^
+	#xdg-open $^
 
 # This file is found under:
 upload: install-i2p.html
